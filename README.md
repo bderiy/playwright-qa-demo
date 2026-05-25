@@ -9,7 +9,7 @@ This is a compact TypeScript Playwright framework for demonstrating senior QA au
 
 These are intentionally public demo targets so the framework is easy to explain without private credentials or company code.
 
-## What I Would Highlight In An Interview
+## What I Would Highlight
 
 1. **Framework structure**
    - `playwright.config.ts` centralizes browser projects, retries, reports, traces, screenshots, videos, and auth setup dependencies.
@@ -66,42 +66,3 @@ USER_PASSWORD=secret_sauce
 CI=false
 ```
 
-## Walkthrough Script
-
-If I were walking through this framework in an interview, I would say:
-
-> "I built this as a small but realistic Playwright TypeScript framework. The main thing I wanted to show is not just test scripts, but maintainable automation architecture. The config defines projects, reporting, retries, traces, and a setup project for authentication. Tests use fixtures and page objects so the test intent is readable. I separated UI and API coverage, added data validation examples, and included CI configuration because automation should be useful in the release pipeline, not only locally."
-
-Then I would open:
-
-1. `playwright.config.ts`
-2. `tests/ui/auth.setup.ts`
-3. `src/fixtures/test.ts`
-4. `src/pages/LoginPage.ts`
-5. `tests/ui/inventory.authenticated.spec.ts`
-6. `tests/api/recommendations.api.spec.ts`
-7. `.github/workflows/playwright.yml`
-
-## Debugging Talking Points
-
-If a test fails, I would check:
-
-- Is it a product issue, test issue, data issue, environment issue, or timing issue?
-- Can I reproduce locally and in CI?
-- What does the Playwright trace show?
-- Did the locator fail because the UI changed or because the state is wrong?
-- Did auth/session expire?
-- Did network/API dependency fail?
-- Can the test be made more deterministic with better waits, test data, or mocking?
-
-## TypeScript Practice Areas
-
-For the coding portion, I would practice:
-
-- Array filtering/mapping/reducing.
-- Finding duplicates.
-- Validating JSON response shape.
-- Writing async/await code safely.
-- Building retry logic.
-- Debugging a failing assertion.
-- Explaining why a test is flaky and how to fix it.
